@@ -12,7 +12,7 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="login" component={HomeScreen} options={{headerShown:false}} />
-        <Stack.Screen name="profile" component={Map} options={{headerShown:false}} />
+        <Stack.Screen name="map" component={Map} options={{headerShown:false}} />
       </Stack.Navigator>
     </NavigationContainer>
   )

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, Alert } from 'react-native';
 import { TextInput, Button } from 'react-native-paper';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const HomeScreen = ({ navigation }) => {
 
@@ -22,13 +21,12 @@ const HomeScreen = ({ navigation }) => {
 
         const data = await response.json()
         if (data.code != '401') {
-            await AsyncStorage.setItem('@accessToken', data.accessToken)
-            const accessToken = await AsyncStorage.getItem('@accessToken')
+           
             Alert.alert(
                 'ok', 'login success', [
                 { text: 'OK', onPress: () => console.log('login success') },
             ]);
-            navigation.navigate('profile')
+            navigation.navigate('map')
         } else {
             Alert.alert(
                 'Error', data.description, [
